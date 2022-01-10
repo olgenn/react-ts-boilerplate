@@ -1,12 +1,10 @@
 // production config
-const { merge } = require("webpack-merge");
 const {join} = require('path');
 const {buildDir, publicPath, srcDir} = require('./env');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const base = require("./base");
 
-module.exports = merge(base, {
+module.exports = {
     mode: "production",
     entry: join(srcDir, 'index.tsx'),
     output: {
@@ -20,4 +18,4 @@ module.exports = merge(base, {
         new MiniCssExtractPlugin(),
     ],
     optimization: {},
-});
+};
